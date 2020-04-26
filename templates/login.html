@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+<div class="container">
+    <h1>Log-in</h1>
+    {% if message != "" %}
+        <p>{{ message }}</p>
+    {% endif %}
+    <p>Please enter your password</p>
+    <form action="{{ url_for('login') }}" method="post">
+        <input type="password" name="password" placeholder="Enter your passsword">
+        <input type="submit" class="btn btn-primary" value="login" name="command">
+    </form>
+    <a href="{{ url_for('signup') }}" class="atag">Don't have an account? Sign up here.</a>
+    <br/>
+    <a href="{{ url_for('reset') }}">Forgot your password? Reset it now</a>
+</div>
+{% endblock %}
+
